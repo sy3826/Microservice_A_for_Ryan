@@ -22,11 +22,11 @@ public class Tester {
 			// Adjust these to simulate the filters
 			// order can be either increasing or decreasing, increasing is default
 			String name = "";
-			String type = "";
-			String rarity = "Rare";
-			String collection = "";
+			String type = "water";
+			String rarity = "";
+			String collection = "collection 2";
 			String set = "";
-			String order = "";
+			String order = "decreasing";
 			
 			JSONObject match = new JSONObject();
 			match.put("card_name", name);

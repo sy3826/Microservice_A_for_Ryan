@@ -100,7 +100,7 @@ public class PokemonFilterSearch extends JFrame implements ActionListener {
 		pathLab.setBounds(10, 259, 185, 41);
 		contentPane.add(pathLab);
 		
-		statusLab = new JLabel("No Connection");
+		statusLab = new JLabel("");
 		statusLab.setBounds(23, 473, 256, 41);
 		statusLab.setHorizontalAlignment(SwingConstants.CENTER);
 		statusLab.setFont(new Font("Serif", Font.BOLD, 20));
@@ -241,7 +241,7 @@ class Communication {
 				
 				// Sort matches
 				matches.sort((o1, o2) -> Double.compare(o1.price, o2.price));
-				if (order == "decreasing") {
+				if (order.equals("decreasing")) {
 					Collections.reverse(matches);
 				}
 				
