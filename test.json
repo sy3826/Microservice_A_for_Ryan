@@ -1,62 +1,52 @@
 [
     {
-        "card_name": "Umbreon VMAX",
-        "collection_name": "My Collection",
-        "set_name": "Evolving Skies",
-        "card_type": "dark",
-        "card_rarity": "Ultra Rare",
-        "market_price": "1640.477",
-        "image_path": "URL",
-        "comments": "Love this card!"
+      "collection_name": "My Collection",
+      "card_list": [
+        {
+          "card_name": "Umbreon VMAX",
+          "collection_name": "My Collection",
+          "set_name": "Evolving Skies",
+          "card_type": "Dark",
+          "card_rarity": "Ultra Rare",
+          "market_price": "1450",
+          "image_path": "/Users/Ryan/Documents/Pokemon_Tracker/Umbreon_vmax.jpg",
+          "comments": "Love this card!"
+        },
+        {
+          "card_name": "Flareon",
+          "collection_name": "My Collection",
+          "set_name": "",
+          "card_type": "Fire",
+          "card_rarity": "Rare",
+          "market_price": "1450",
+          "image_path": "",
+          "comments": ""
+        }
+      ]
     },
     {
-        "card_name": "Bulbasaur",
-        "collection_name": "My Collection",
-        "set_name": "Evolving Skies",
-        "card_type": "grass",
-        "card_rarity": "Rare",
-        "market_price": "1",
-        "image_path": "URL",
-        "comments": "It's pretty good"
-    },
-    {
-        "card_name": "Charmander",
-        "collection_name": "Super Collection",
-        "set_name": "I don't know",
-        "card_type": "fire",
-        "card_rarity": "Rare",
-        "market_price": "344565",
-        "image_path": "URL",
-        "comments": "OK"
-    },
-    {
-        "card_name": "Wartortle",
-        "collection_name": "Collection 2",
-        "set_name": "Evolving Skies",
-        "card_type": "water",
-        "card_rarity": "Rare",
-        "market_price": "43",
-        "image_path": "URL",
-        "comments": "Love this card!"
-    },
-    {
-        "card_name": "Butterfree",
-        "collection_name": "My Collection",
-        "set_name": "Evolving Skies",
-        "card_type": "bug",
-        "card_rarity": "Common Rare",
-        "market_price": "14",
-        "image_path": "URL",
-        "comments": "Wow this is amazing"
-    },
-    {
-        "card_name": "Blastoise",
-        "collection_name": "My Collection",
-        "set_name": "Evolving Skies",
-        "card_type": "water",
-        "card_rarity": "Rare",
-        "market_price": "5353",
-        "image_path": "URL",
-        "comments": "meh"
-    },
-]
+        "collection_name": "My Collection 2",
+        "card_list": [
+          {
+            "card_name": "Umbreon VMAX",
+            "collection_name": "My Collection 2",
+            "set_name": "Evolving Skies",
+            "card_type": "Dark",
+            "card_rarity": "Ultra Rare",
+            "market_price": "1450",
+            "image_path": "/Users/Ryan/Documents/Pokemon_Tracker/Umbreon_vmax.jpg",
+            "comments": "Love this card!"
+          },
+          {
+            "card_name": "Test Pokemon",
+            "collection_name": "My Collection",
+            "set_name": "",
+            "card_type": "Fire",
+            "card_rarity": "Common",
+            "market_price": "1450",
+            "image_path": "",
+            "comments": ""
+          }
+        ]
+      }
+  ]
