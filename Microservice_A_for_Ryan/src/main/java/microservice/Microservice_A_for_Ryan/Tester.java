@@ -27,6 +27,7 @@ public class Tester {
 			String collection = "";
 			String set = "";
 			String order = "";
+			String path = "\\C:\\Users\\seany\\Desktop\\test.json\\";
 			
 			JSONObject match = new JSONObject();
 			match.put("card_name", name);
@@ -35,6 +36,7 @@ public class Tester {
 			match.put("card_type", type);
 			match.put("card_rarity", rarity);
 			match.put("order", order);
+			match.put("json_path", path);
 		
 			socket.send(match.toString().getBytes(ZMQ.CHARSET), 0);
 			byte[] data = socket.recv();

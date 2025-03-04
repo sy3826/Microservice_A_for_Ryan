@@ -155,23 +155,25 @@ class Communication {
 	String collection;
 	String set;
 	String order;
+	String path;
+	
+	// Log
+	Log log;
 	
 	@SuppressWarnings("unchecked")
 	public Communication(PokemonFilterSearch pfs, String portStr, String pathStr, Log log) {
 		// Setup port and start listening
 		while (true) {
 			// Get port and path
+			this.log = log;
 			try {
-				JSONParser parser = (JSONParser) new JSONParser();
-				array = (JSONArray) parser.parse(new FileReader(pathStr));
-				port = Integer.parseInt(portStr);
+				getPokemon(pathStr, portStr, pfs);
 			} catch (Exception e) {
 				pfs.statusLab.setText("Error in port number or path");
 				e.printStackTrace();
 				log.addLine(e.toString(), pfs);
 				log.addLine("", pfs);
 				this.reset(pfs);
-				break;
 			}
 			
 			// Communication
@@ -196,11 +198,14 @@ class Communication {
 				filters = (JSONObject) parser.parse(new String(request, ZMQ.CHARSET));
 				
 				// Extract the filters
-				this.extractFilter(filters);
+				extractFilter(filters);
 				log.addLine("Recieved filters to search Pokemons", pfs);
 				log.addLine("Recieved: " + name + ", " + type + ", " + rarity + ", " + 
-							collection + ", " + set + " " + order, pfs);
+							collection + ", " + set + ", " + order + ", " + path, pfs);
 				this.reset(pfs);
+				
+				// Change path if overridden
+				getPokemon(path, portStr, pfs);
 				
 				// Extract pokemons from array
 				pokemonAll = new JSONArray();
@@ -222,7 +227,7 @@ class Communication {
 					String objPrice = (String) jsonObj.get("market_price");
 					pokemons.add(new Pokemon(objName, objType, objRarity, objCollection, 
 												objSet, Double.parseDouble(objPrice), 
-												(String) jsonObj.get("iamge_path"), (String) jsonObj.get("comments")));
+												(String) jsonObj.get("image_path"), (String) jsonObj.get("comments")));
 				}
 				
 				// Find matching
@@ -286,6 +291,16 @@ class Communication {
 		}
 	}
 	
+	// Get pokemon from given path and set up port
+	void getPokemon(String pathStr, String portStr, PokemonFilterSearch pfs) throws Exception {
+		if (!pathStr.equals("")) {
+			System.out.println(pathStr);
+			JSONParser parser = (JSONParser) new JSONParser();
+			array = (JSONArray) parser.parse(new FileReader(pathStr));
+		}
+		port = Integer.parseInt(portStr);
+	}
+	
 	// Extract the desired filters
 	void extractFilter(JSONObject object) {
 		name = (String) object.get("card_name");
@@ -294,6 +309,7 @@ class Communication {
 		collection = (String) object.get("collection_name");
 		set = (String) object.get("set_name");
 		order = (String) object.get("order");
+		path = (String) object.get("json_path");
 	}
 	
 	// Revalidate and repaint frame
