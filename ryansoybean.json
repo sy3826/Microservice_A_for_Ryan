@@ -1,0 +1,27 @@
+[
+  {
+    "collection_name": "My Collection",
+    "card_list": [
+      {
+        "card_name": "Umbreon VMAX",
+        "collection_name": "My Collection",
+        "set_name": "Evolving Skies",
+        "card_type": "Dark",
+        "card_rarity": "Ultra Rare",
+        "market_price": "1450",
+        "image_path": "/Users/Ryan/Documents/Pokemon_Tracker/Umbreon_vmax.jpg",
+        "comments": "Love this card!"
+      },
+      {
+        "card_name": "Flareon",
+        "collection_name": "My Collection",
+        "set_name": "",
+        "card_type": "Fire",
+        "card_rarity": "Rare",
+        "market_price": "1450",
+        "image_path": "",
+        "comments": ""
+      }
+    ]
+  }
+]
