@@ -22,11 +22,11 @@ public class Tester {
 			// Adjust these to simulate the filters
 			// order can be either increasing or decreasing, increasing is default
 			String name = "";
-			String type = "water";
+			String type = "";
 			String rarity = "";
-			String collection = "collection 2";
+			String collection = "";
 			String set = "";
-			String order = "decreasing";
+			String order = "";
 			
 			JSONObject match = new JSONObject();
 			match.put("card_name", name);
@@ -50,6 +50,7 @@ public class Tester {
 			for (Object obj: array) {
 				JSONObject object = (JSONObject) obj;
 				System.out.println(object.toJSONString());
+				System.out.println();
 			}
 			System.out.println("enter exit to close connection");
 			

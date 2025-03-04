@@ -145,6 +145,7 @@ class Communication {
 	int port;
 	
 	JSONArray array;
+	JSONArray pokemonAll;
 	JSONObject filters;
 	
 	// Filters
@@ -201,9 +202,17 @@ class Communication {
 							collection + ", " + set + " " + order, pfs);
 				this.reset(pfs);
 				
+				// Extract pokemons from array
+				pokemonAll = new JSONArray();
+				for (Object obj: array) {
+					JSONObject tempObj = (JSONObject) obj;
+					JSONArray tempArr = (JSONArray) tempObj.get("card_list");
+					pokemonAll.addAll(tempArr);
+				}
+				
 				// Find and return pokemons according to filter
 				ArrayList<Pokemon> pokemons = new ArrayList<>();
-				for (Object obj: array) {
+				for (Object obj: pokemonAll) {
 					JSONObject jsonObj = (JSONObject) obj;
 					String objName = (String) jsonObj.get("card_name");
 					String objType = (String) jsonObj.get("card_type");
