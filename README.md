@@ -2,7 +2,7 @@
 
 **Requesting Data**
 
-To reqeust a data from the microservice, communication will need to be done through ZeroMq. First, a connection will need to be established with the socket type set to REQ. Then, after connecting to the microservice by using the port number that has been predetermined and entered into the microservice, the data would need to be sent. The data must be in JSON format, with one JSON object containing the values for the keys: card_name, collection_name, set_name, card_type, card_rarity, and order. However, before sending, the object must first be converted to bytes with the appropriate charset UTF-8. Then the data would be sent by using the send method within ZeroMq. This is shown by the following example snippet from Tester.java:
+To reqeust a data from the microservice, communication will need to be done through ZeroMq. First, a connection will need to be established with the socket type set to REQ. Then, after connecting to the microservice by using the port number that has been predetermined and entered into the microservice, the data would need to be sent. The data must be in JSON format, with one JSON object containing the values for the keys: card_name, collection_name, set_name, card_type, card_rarity, and order. Also, a json_path can be added to the JSONObject if the path to the file containing all of the Pokemon has not been explicitly inputed in the UI. However, before sending, the object must first be converted to bytes with the appropriate charset UTF-8. Then the data would be sent by using the send method within ZeroMq. This is shown by the following example snippet from Tester.java:
 ```
 JSONObject match = new JSONObject();
 match.put("card_name", name);
@@ -11,7 +11,8 @@ match.put("set_name", set);
 match.put("card_type", type);
 match.put("card_rarity", rarity);
 match.put("order", order);
- 
+match.put("json_path", path);
+
 socket.send(match.toString().getBytes(ZMQ.CHARSET), 0);
 ```
 
