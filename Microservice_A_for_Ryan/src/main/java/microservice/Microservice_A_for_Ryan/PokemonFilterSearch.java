@@ -174,6 +174,7 @@ class Communication {
 				log.addLine(e.toString(), pfs);
 				log.addLine("", pfs);
 				this.reset(pfs);
+				break;
 			}
 			
 			// Communication
